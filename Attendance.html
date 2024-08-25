@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendence BIS</title>
+    <link rel="stylesheet" href="CSS/Normalize.css">
+    <link rel="stylesheet" href="CSS/Main CSS/Attendance.css">
+    <link rel="stylesheet" href="CSS/Screens CSS/home.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-img">
+                <img decoding="async" class="logo" src="img/logo.png" alt="Logo">
+            </div>
+            <h2>Hi,<Span id="StudentName"></Span></h2>
+            <div class="date-normal">
+                <iframe
+                    src="https://free.timeanddate.com/clock/i9gdh0ji/n53/tleg/fn7/fs20/tct/pct/fcfff/tt0/tm1/th2/tb1"
+                    frameborder="0" width="402" height="30" allowtransparency="true"></iframe>
+            </div>
+            <div class="date-respons">
+                <iframe
+                    src="https://free.timeanddate.com/clock/i9gdhg2x/n53/tleg/fn7/fs20/tct/pct/fcfff/tt0/tm3/th2/tb4"
+                    frameborder="0" width="247" height="58" allowtransparency="true"></iframe>
+            </div>
+            <button class="Logout-btn" onclick="location.href='Login.html'">Logout</button>
+        </div>
+    </nav>
+
+    <Section class="Form">
+        <div class="container">
+            <h2>Attendance Form</h2>
+            <p class="User-msg2" id="User-msg2">Welcome in campus</p>
+            <p class="User-msg" id="User-msg">Can't login "Not in the Allowed Area"</p>
+            <form action="submit_attendance.php" method="POST">
+
+                <label for="student_name">Student Name:</label>
+                <input type="text" id="student_name" name="student_name" required disabled><br><br>
+
+                <label for="ID">ID:</label>
+                <input class="num" type="number" id="ID" name="ID" required disabled><br><br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required disabled><br><br>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="date" required disabled><br><br>
+
+                <label for="Course">Course Name:</label>
+                <select id="Course" name="Course" required disabled>
+                    <option value="Present">ABC</option>
+                    <option value="Present">XYZ</option>
+                </select><br><br>
+
+                <label for="Doctor">Doctor Name:</label>
+                <select id="Doctor" name="Doctor" required disabled>
+                    <option value="Present">ABC</option>
+                    <option value="Present">XYZ</option>
+                </select><br><br>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required disabled>
+                    <option value="Present">Offline</option>
+                    <option value="Present">Online</option>
+                </select><br><br>
+
+
+                <label for="Groups">Groups:</label>
+                <select id="Groups" name="Groups" required disabled>
+                    <option value="Present">G1</option>
+                    <option value="Present">G2</option>
+                    <option value="Present">G3</option>
+                    <option value="Present">G4</option>
+                    <option value="Present">G5</option>
+                    <option value="Present">G6</option>
+                    <option value="Present">G7</option>
+                    <option value="Present">G8</option>
+                    <option value="Present">G9</option>
+                    <option value="Present">G10</option>
+                    <option value="Present">G11</option>
+                    <option value="Present">G12</option>
+                    <option value="Present">G13</option>
+                    <option value="Present">G13</option>
+                    <option value="Present">G14</option>
+                </select><br><br>
+
+                <button disabled class="Submit-btn" id="submitbtn" type="submit">Submit Your Attendance</button>
+            </form>
+        </div>
+    </Section>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <div id="modal-content" class="modal-content"></div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 2024 <span>BIS</span> All Right Reserved</p>
+    </footer>
+
+    <script>
+        // Set the default value of the date input to today's date
+        document.getElementById('date').value = new Date().toISOString().split('T')[0];
+
+        // Function to get the current time in HH:MM format
+        function setCurrentTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const currentTime = `${hours}:${minutes}`;
+
+            // Set the time input value
+            document.getElementById('time').value = currentTime;
+        }
+
+        // Set the time as soon as the page loads
+        window.onload = setCurrentTime;
+
+    </script>
+    <script src="JS/Script Att.js"></script>
+</body>
+
+</html>

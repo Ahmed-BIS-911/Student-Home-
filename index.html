@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="CSS/Main CSS/Login_styles.css">
+    <link rel="stylesheet" href="CSS/Screens CSS/login_screen.css">
+    <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="login-container">
+        <form id="login-form" method="POST">
+            <div class="img">
+                <img src="img/Logo.png" alt="Logo">
+            </div>
+            <div class="input-group">
+                <label for="username">Student ID</label>
+                <input type="number" id="username" name="username" required placeholder="Student ID">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Password">
+            </div>
+            <button disabled id="submitbtn" type="submit">Login</button>
+            <p style="font-size: 20px; display: none;" class="User-msg2" id="User-msg2">Welcome in campus</p>
+            <p style="display: none; font-size: 20px;" class="User-msg" id="User-msg">Can't login "Not in the Allowed
+                Area"</p>
+            <p class="copyright">&copy; 2024 <span>BIS</span> All Right Reserved</p>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <div id="modal-content" class="modal-content"></div>
+    </div>
+
+    <script src="JS/Script Login.js"></script>
+</body>
+
+</html>
